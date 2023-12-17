@@ -1,7 +1,28 @@
   <?php
   $TITLE = "Conf BSAS";
-  include_once 'components/navbar.php'
+  include_once 'components/navbar.php';
+  require_once 'db.php';
+
+
+  $oradores_query = $db->query("SELECT * FROM oradores;");
+
+  $oradores = $oradores_query->fetch_all(MYSQLI_ASSOC);
+
+
+  function get_tipics_by_orador_id($db, $oradorId) {
+    $topics_stmt = $db->prepare("
+      SELECT topics.name, topics.color_hex
+      FROM oradores_topics
+      JOIN topics ON topics.id = oradores_topics.topic_id
+      WHERE oradores_topics.orador_id = ? ;");
+
+    $topics_stmt->bind_param("i", $oradorId);
+    $topics_stmt->execute();
+    return $topics_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+  }
   ?> 
+
+
 
   <!-- SECCION CARROUSEL -->
   <section>
@@ -92,59 +113,29 @@
 
     <div class="container">
       <div class="row ">
-        <div class="col text-center justify-content-center">
+        <?php foreach ($oradores as $orador){ ?>
+          <div class="col text-center justify-content-center">
           <!-- CARD 1 -->
           <div class="card orador-card mx-auto mx-md-0  mb-3 mb-md-0">
 
-            <img class="card-img-top" src="images/steve.jpg">
+            <img class="card-img-top" src="<?php echo $orador["image_url"]; ?>">
             <div class="card-body">
               <div class="d-flex  mb-2">
-                <div class="bg-warning p-1 rounded-2 me-2">Javascript</div>
-                <div class="bg-primary text-light  p-1 rounded-2">React</div>
+                <?php 
+                  $topics = get_tipics_by_orador_id($db, $orador["id"]);
+
+                  foreach ($topics as $topic) {
+                    echo "<div class='p-1 rounded-2 me-2' style='background-color: #" . $topic["color_hex"] . "'>" . $topic["name"] . "</div>";
+                  }
+                ?>
               </div>
-              <h5 class="card-title text-start">Steve Jobs</h5>
-              <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
+              <h5 class="card-title text-start"><?php echo $orador["name"] . $orador["surename"] ?></h5>
+              <p class="card-text text-start""><?php echo $orador["description"]; ?></p>
             </div>
           </div>
         </div>
 
-        <!-- CARD 2 -->
-        <div class="col">
-          <div class="card orador-card mx-auto mx-md-0  mb-3 mb-md-0">
-            <img class="card-img-top" src="images/bill.jpg">
-            <div class="card-body">
-              <div class="d-flex  mb-2">
-                <div class="bg-warning p-1 rounded-2 me-2">Javascript</div>
-                <div class="bg-primary text-light  p-1 rounded-2">React</div>
-              </div>
-              <h5 class="card-title text-start">Bill Gates</h5>
-              <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk
-                of the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="col text-center">
-
-          <div class="card orador-card mx-auto mx-md-0">
-            <img class="card-img-top" src="images/ada.jpeg">
-            <div class="card-body">
-              <div class="d-flex mb-2">
-                <div class="bg-secondary text-light p-1 rounded-2 me-2">Negocios</div>
-                <div class="bg-danger text-light p-1 rounded-2">Startup</div>
-              </div>
-              <h5 class="card-title text-start">Ada Lovelace</h5>
-              <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk
-                of the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
+        <?php }?>
 
       </div>
     </div>
