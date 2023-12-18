@@ -36,11 +36,11 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-nowrap text-center text-left-md" aria-current="page" href="#">La
+            <a class="nav-link active text-nowrap text-center text-left-md" aria-current="page" href="/">La
               conferencia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-nowrap text-center text-left-md" href="#">Los oradores</a>
+            <a class="nav-link text-nowrap text-center text-left-md" href="charlas.php">Charlas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md" aria-disabled="true">El lugar y la fecha</a>
