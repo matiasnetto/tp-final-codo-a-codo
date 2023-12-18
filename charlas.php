@@ -2,6 +2,7 @@
     require_once 'db.php';
 
     $TITLE = "Conf BSAS - Cronograma";
+    $ACTIVE_INDEX = 2;
     include_once 'components/navbar.php';
 
     $charlas_query = $db->query("
