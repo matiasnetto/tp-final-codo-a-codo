@@ -1,5 +1,6 @@
   <?php
   $TITLE = "Conf BSAS";
+  $ACTIVE_INDEX = 1;
   include_once 'components/navbar.php';
   require_once 'db.php';
 
