@@ -27,7 +27,7 @@ CREATE TABLE oradores_topics (
 CREATE TABLE charlas (
     id int NOT NULL PRIMARY KEY  AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(50) NOT NULL,
+    description VARCHAR(255) NOT NULL,
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     topic_id int NOT NULL,
