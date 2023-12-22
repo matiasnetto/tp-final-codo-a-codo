@@ -49,7 +49,7 @@
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 4 ? 'active' : '' ?>" href="conviertete-en-orador.php" aria-disabled="true">Convertite en orador</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 5 ? 'active' : '' ?>" aria-disabled="true">Comprar tickets</a>
+            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 5 ? 'active' : '' ?>" href="comprar-tikets.php" aria-disabled="true">Comprar tickets</a>
           </li>
         </ul>
       </div>
