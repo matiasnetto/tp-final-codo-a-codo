@@ -1,0 +1,9 @@
+.conviertete-en-orador {
+  width: 100%;
+}
+
+@media (min-width: 767px) {
+  .conviertete-en-orador {
+    width: 50%;
+  }
+}

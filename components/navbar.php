@@ -36,20 +36,20 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-nowrap text-center text-left-md  <?php echo $ACTIVE_INDEX == 1 ? 'active' : '' ?>" aria-current="page" href="/">La
+            <a class="nav-link text-nowrap text-center text-left-md  <?php echo $ACTIVE_INDEX == 1 ? 'active' : '' ?>" href="index.php" aria-current="page" href="/">La
               conferencia</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 2 ? 'active' : '' ?>" href="charlas.php">Charlas</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 3 ? 'active' : '' ?>" aria-disabled="true">El lugar y la fecha</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 4 ? 'active' : '' ?>" href="conviertete-en-orador.php" aria-disabled="true">Convertite en orador</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 4 ? 'active' : '' ?>" aria-disabled="true">Convertite en orador</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 5 ? 'active' : '' ?>" aria-disabled="true">Comprar tickets</a>
+            <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 5 ? 'active' : '' ?>" href="comprar-tikets.php" aria-disabled="true">Comprar tickets</a>
           </li>
         </ul>
       </div>
