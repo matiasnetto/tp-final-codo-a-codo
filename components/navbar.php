@@ -42,9 +42,9 @@
           <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 2 ? 'active' : '' ?>" href="charlas.php">Charlas</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 3 ? 'active' : '' ?>" aria-disabled="true">El lugar y la fecha</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link text-nowrap text-center text-left-md <?php echo $ACTIVE_INDEX == 4 ? 'active' : '' ?>" href="conviertete-en-orador.php" aria-disabled="true">Convertite en orador</a>
           </li>
